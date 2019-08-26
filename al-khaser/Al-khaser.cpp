@@ -19,7 +19,7 @@ int main(void)
 	BOOL	ENABLE_WINE_CHECKS = TRUE;
 	BOOL	ENABLE_PARALLELS_CHECKS = TRUE;
 	BOOL	ENABLE_CODE_INJECTIONS = FALSE;
-	BOOL	ENABLE_TIMING_ATTACKS = TRUE;
+	BOOL	ENABLE_TIMING_ATTACKS = FALSE;
 	BOOL	ENABLE_DUMPING_CHECK = TRUE;
 	BOOL	ENABLE_ANALYSIS_TOOLS_CHECK = TRUE;
 
@@ -265,7 +265,7 @@ int main(void)
 
 	_tprintf(_T("\n\nAnalysis done, I hope you didn't get red flags :)"));
 
-	getchar();
+	//getchar();
 	return 0;
 }
 

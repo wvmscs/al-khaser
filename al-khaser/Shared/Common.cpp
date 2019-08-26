@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "Common.h"
 
+#include "../reports/wvmscsreports.h"
+
 VOID print_detected()
 {
 	/* Get handle to standard output */
@@ -35,6 +37,8 @@ VOID print_not_detected()
 
 VOID print_category(const TCHAR* text)
 {
+	wvmscs_print_category(text);
+
 	/* Get handle to standard output */
 	HANDLE nStdHandle = GetStdHandle(STD_OUTPUT_HANDLE);  
 	CONSOLE_SCREEN_BUFFER_INFO ConsoleScreenBufferInfo;
@@ -52,6 +56,7 @@ VOID print_category(const TCHAR* text)
 VOID _print_check_text(const TCHAR* szMsg)
 {
 	_tprintf(TEXT("[*] %s"), szMsg);
+	wvmscs__print_ckeck_text(szMsg);
 
 	/* align the result according to the length of the text */
 	size_t spaces_to_padd = 95 - _tcslen(szMsg);
@@ -63,6 +68,8 @@ VOID _print_check_text(const TCHAR* szMsg)
 
 VOID _print_check_result(int result, const TCHAR* szMsg)
 {
+	wvmscs__print_check_result(result, szMsg);
+
 	if (result == TRUE)
 		print_detected();
 	else
@@ -114,6 +121,7 @@ VOID print_os()
 	{
 		//_tcscpy_s(szOS, MAX_PATH, szOS);
 		_tprintf(_T("\n[*] You are running: %s\n"), szOS);
+		wvmscs_print_os(szOS);
 	}
 }
 
@@ -152,6 +160,7 @@ VOID print_last_error(LPCTSTR lpszFunction)
 			lpszFunction, dw, lpMsgBuf);
 
 		_tprintf((LPCTSTR)lpDisplayBuf);
+		wvmscs_print_last_error((LPCTSTR)lpDisplayBuf);
 
 		LocalFree(lpDisplayBuf);
 	}

@@ -1,0 +1,15 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "tâche-wvmscsreports",
+      "appliesTo": "al-khaser/reports/wvmscsreports.cpp",
+      "type": "launch"
+    },
+    {
+      "taskLabel": "tâche-al-khaser",
+      "appliesTo": "al-khaser.sln",
+      "type": "launch"
+    }
+  ]
+}

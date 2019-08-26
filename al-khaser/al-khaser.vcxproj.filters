@@ -440,6 +440,7 @@
     <ClCompile Include="AntiDebug\BeingDebugged.cpp">
       <Filter>AntiDebug\Source</Filter>
     </ClCompile>
+    <ClCompile Include="reports\wvmscsreports.cpp" />
   </ItemGroup>
   <ItemGroup>
     <MASM Include="AntiDebug\int2d_x86.asm">
